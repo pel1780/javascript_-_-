@@ -1,0 +1,60 @@
+.top_banner {
+    background: #333;
+    color: #fff;
+    position: relative;
+
+    height: 100px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.top_banner.on {
+    height: 0;
+}
+
+.top_banner i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tab_content li {
+    display: none;
+}
+
+.tab_content li.on {
+    display: block;
+}
+
+.tab_menu li.on {
+    color: tomato;
+}
+
+.bb {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background: tomato;
+    color: #fff;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+}
+
+.arrows i {
+    font-size: 100px;
+    color: #fff;
+    text-shadow: 0 0 1px #000;
+}
+
+.sub .swiper-slide {
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.sub .swiper-slide.on {
+    color: tomato;
+    opacity: 1;
+    transition: 0.5s 0.5s;
+}
