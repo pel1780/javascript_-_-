@@ -1,60 +1,136 @@
-.top_banner {
-    background: #333;
-    color: #fff;
-    position: relative;
+.Wrap {
+    min-width: 1900px;
+}
 
-    height: 100px;
+#header {
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* overflow: hidden; */
+}
+
+#header .topBanner {
+    position: relative;
+    height: 160px;
+    background: tomato;
     overflow: hidden;
     transition: 0.5s;
 }
 
-.top_banner.on {
+#header .topBanner.on {
     height: 0;
 }
 
-.top_banner i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.tab_content li {
+#header .topBanner.on+i {
     display: none;
 }
 
-.tab_content li.on {
+#header .topBanner a {
     display: block;
+    height: 160px;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
-.tab_menu li.on {
-    color: tomato;
+#header .topBanner .itm01 a {
+    background-image: url(../img/top_banner01.jpg);
 }
 
-.bb {
-    display: inline-block;
-    width: 50px;
-    height: 30px;
-    background: tomato;
-    color: #fff;
-    border-radius: 50%;
-    line-height: 30px;
-    text-align: center;
+#header .topBanner .itm02 a {
+    background-image: url(../img/top_banner02.png);
 }
 
-.arrows i {
-    font-size: 100px;
-    color: #fff;
-    text-shadow: 0 0 1px #000;
+#header .topBanner .itm03 a {
+    background-image: url(../img/top_banner03.png);
 }
 
-.sub .swiper-slide {
+#header .topBanner .dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    width: auto;
+}
+
+#header .topBanner .dots span {
+    width: 4px;
+    height: 10px;
+    background: #fff;
+    border-radius: 0;
     transition: 0.5s;
-    opacity: 0;
 }
 
-.sub .swiper-slide.on {
-    color: tomato;
-    opacity: 1;
-    transition: 0.5s 0.5s;
+#header .topBanner .dots span.swiper-pagination-bullet-active {
+    transform: scale(1.5);
+}
+
+#header i {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-100%, 0);
+    z-index: 999;
+    margin: 0 0 0 600px;
+    font-size: 30px;
+    color: #fff;
+}
+
+#header .hdWap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    line-height: 100px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    z-index: 999;
+
+    transition: 0.5s;
+}
+
+#header .hdWap.on {
+    line-height: 80px;
+    background: rgba(255, 255, 255, 1);
+    color: #444;
+}
+
+#header .hdWap .gnb {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#header .hdWap h1 {
+    position: absolute;
+    top: 0;
+    left: 70px;
+}
+
+#header .hdWap h1 a {
+    display: block;
+    background: url(../img/logo_w.png) no-repeat center center;
+    font-size: 0;
+    width: 188px;
+}
+
+#header .hdWap.on h1 a {
+    background: url(../img/logo_c.png) no-repeat center center;
+}
+
+#header .hdWap .right {
+    position: absolute;
+    top: 0;
+    right: 70px;
+}
+
+/* header */
+
+#main {
+    position: relative;
+    z-index: 1;
+    background: url(../img/main_visual01.jpg) no-repeat center center/cover;
+    height: 100vh;
 }
