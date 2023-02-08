@@ -128,9 +128,130 @@
 
 /* header */
 
-#main {
+#main {}
+
+#mainVisual {
     position: relative;
-    z-index: 1;
-    background: url(../img/main_visual01.jpg) no-repeat center center/cover;
-    height: 100vh;
+}
+
+#mainVisual .itm {
+    position: relative;
+    height: calc(100vh - 160px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+#mainVisual .itm01 {
+    background-image: url(../img/main_visual01.jpg);
+}
+
+#mainVisual .itm02 {
+    background-image: url(../img/main_visual02.jpg);
+}
+
+#mainVisual .itm03 {
+    background-image: url(../img/main_visual03.png);
+    background-position: center center;
+}
+
+#mainVisual .itm .slogan {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 1200px;
+    color: #fff;
+    text-shadow: 0 1px 1px #111;
+}
+
+#mainVisual .itm .slogan h3 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    width: 700px;
+    line-height: 1.1;
+}
+
+#mainVisual .itm .slogan p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#mainVisual .arrows>div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9;
+
+    font-size: 0;
+    width: 50px;
+    height: 50px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+
+#mainVisual .arrows>div:nth-child(1) {
+    margin: 0 0 0 -700px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#mainVisual .arrows>div:nth-child(2) {
+    margin: 0 0 0 700px;
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+#mainVisual .silde_nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -50%);
+    margin: 0 0 0 600px;
+    color: #fff;
+    z-index: 9;
+}
+
+#mainVisual .silde_nav li {
+    text-align: right;
+}
+
+#mainVisual .silde_nav li a {
+    display: block;
+    padding: 2px 0;
+    font-size: 0;
+}
+
+#mainVisual .silde_nav li.on a {
+    font-size: inherit;
+}
+
+#mainVisual .silde_nav li a::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #fff;
+    margin: 0 0 0 10px;
+    vertical-align: -2px;
+}
+
+#mainVisual .silde_nav li.on a::after {
+    background: #fff;
+}
+
+#mainVisual .num {
+    position: absolute;
+    bottom: 300px;
+    left: 50%;
+    margin: 0 0 0 -600px;
+
+    z-index: 9;
+    font-size: 20px;
+    color: #f2f2f2;
+    text-shadow: 0 1px 1px #111;
+}
+
+#mainVisual .num strong {
+    font-size: 30px;
+    color: #4fb44f;
 }
