@@ -410,3 +410,143 @@ p {
 #mainPortfolio .mp_right_wrap .stitle {
     margin-bottom: 66px;
 }
+
+#mainPortfolio .arrows {
+    display: inline-flex;
+    border: 1px solid #fff;
+    align-self: flex-start;
+    color: #fff;
+    margin-bottom: 100px;
+}
+
+#mainPortfolio .arrows li~li {
+    border-left: 1px solid #fff;
+
+}
+
+#mainPortfolio .arrows li i {
+    padding: 10px;
+    font-size: 30px;
+}
+
+#mainSolution {
+    background: #f9f9f9;
+    position: relative;
+}
+
+#mainSolution .Ms_slide .swiper-slide {
+    width: 1200px;
+
+}
+
+#mainSolution .Ms_slide li .case {
+    filter: grayscale(1) brightness(150%);
+    transition: 0.5s;
+}
+
+#mainSolution .Ms_slide li.on .case {
+    filter: grayscale(0) brightness(100%);
+}
+
+#mainSolution .base {
+    position: absolute;
+    top: 320px;
+    left: 50%;
+    margin: 0 0 0 -500px;
+    z-index: 1;
+    background: #fff;
+    width: 300px;
+    padding: 50px 50px 50px 50px;
+    border: 1px solid #f2f2f2;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+#mainSolution .Ms_content .content {
+    display: none;
+}
+
+#mainSolution .Ms_content .content.on {
+    display: block;
+}
+
+#mainSolution .Ms_content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+#mainSolution .Ms_content p {
+    font-size: 15px;
+    font-weight: 300;
+    min-height: 150px;
+}
+
+#mainSolution .Ms_content {
+    position: relative;
+    margin: 0 0 50px 0;
+}
+
+#mainSolution .Ms_content::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -50px;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 2px;
+    background: var(--mc);
+}
+
+#mainSolution .num {
+    font-size: 24px;
+}
+
+#mainSolution .num strong {
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--mc);
+}
+
+#mainSolution .arrows li {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: auto;
+}
+
+#mainSolution .arrows li:nth-child(1) {
+    margin: 0 0 0 -600px;
+}
+
+#mainSolution .arrows li:nth-child(2) {
+    margin: 0 0 0 600px;
+}
+
+#mainSolution .arrows li i {
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#mainSolution .swiper-wrapper {
+    margin-bottom: 50px;
+}
+
+#mainSolution .dots {
+    text-align: center;
+}
+
+#mainSolution .dots span {
+    width: 18px;
+    height: 18px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+}
+
+#mainSolution .dots span.swiper-pagination-bullet-active {
+    background: var(--mc);
+}
