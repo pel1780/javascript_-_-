@@ -57,7 +57,7 @@ const MAIN_VISUAL_SLIDE_OPTION = {
     // },
     on: {
         slideChangeTransitionStart: function () {
-            console.log(this, this.realIndex, MAIN_SLIDE_NAV_LI);
+            // console.log(this, this.realIndex, MAIN_SLIDE_NAV_LI);
             let idx = this.realIndex;
             let total = this.slides.length;
             MAIN_SLIDE_NAV_LI.forEach(it => it.classList.remove('on'));
@@ -75,7 +75,7 @@ const MAIN_VISUAL_SLIDE_OPTION = {
 const MAIN_VISUAL_SLIDE = new Swiper('.mainSlide', MAIN_VISUAL_SLIDE_OPTION);
 
 const MAIN_VISUAL_SLIDE_ARROWS = document.querySelectorAll('#mainVisual .arrows>div');
-console.log(MAIN_VISUAL_SLIDE_ARROWS[1]);
+// console.log(MAIN_VISUAL_SLIDE_ARROWS[1]);
 
 MAIN_VISUAL_SLIDE_ARROWS[0].addEventListener('click', () => {
     MAIN_VISUAL_SLIDE.slidePrev(2000);
@@ -136,7 +136,7 @@ const MS_SLIDE_OPTION = {
     slideActiveClass: "on",
     on: {
         slideChangeTransitionStart: function () {
-            console.log(this.realIndex, this.slides.length);
+            // console.log(this.realIndex, this.slides.length);
             let idx = this.realIndex;
             let total = MS_CONTENT.length;
             // for (let i = 0; i < MS_CONTENT.length; i++) {
@@ -158,3 +158,47 @@ const MS_SLIDE_OPTION = {
     }
 }
 const MS_SLIDE = new Swiper('.Ms_slide', MS_SLIDE_OPTION);
+
+
+//바닐라 자바스크립트로 youtube 영상 넣기
+//head에 script src 유툽.api넣어주기!!
+let player;
+// const Y_OPTION =
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('main_movie01', {
+        height: '100%',
+        width: '100%',
+        videoId: 'raw3Nu0_mBQ',
+    });
+}
+
+// pp.onclick = () => {
+//     console.log('btn')
+// } id는 변수에 담지않고도 함수를 실행할수 있다
+
+// const Y_PLAY_BTN = document.querySelector('#pp');
+// const Y_PAUSE_BTN = document.querySelector('#pp2');
+// const Y_PLAY_VIDEO = () => {
+//     console.log(111);
+//     player.playVideo();
+// }
+// const Y_PAUSE_VIDEO = () => {
+//     console.log(111);
+//     player.pauseVideo();
+// }
+// Y_PLAY_BTN.addEventListener('click', Y_PLAY_VIDEO);
+// Y_PAUSE_BTN.addEventListener('click', Y_PAUSE_VIDEO);
+
+
+const V_BTN = document.querySelector('.video_btn');
+let SW = true;
+const V_SWITCH = e => {
+    const tg = e.target;
+    tg.classList.toggle('on');
+    SW ? player.playVideo() : player.pauseVideo();
+    SW = !SW;
+}
+// let SW : 전역변수, 전역변수를 지역변수로 가둬서 사용하는 방법이 클로져
+// V_SWITCH
+
+V_BTN.addEventListener('click', V_SWITCH)
