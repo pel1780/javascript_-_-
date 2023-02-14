@@ -1,5 +1,6 @@
 :root {
     --mc: #008850;
+    --sc: #00e085;
 }
 
 /* --mc, calc(), scale() : 함수 */
@@ -598,4 +599,93 @@ p {
 
 #mainMovie .video_btn.on::before {
     content: "\ea3b";
+}
+
+#mainMovie .link>li {
+    position: relative;
+    flex: 1;
+}
+
+#mainMovie .link>li:nth-child(1)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translate(0, -50%);
+    width: 2px;
+    height: 15px;
+    background: #f9f9f9;
+}
+
+#mainMovie .link>li:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    transform: translate(0, -50%);
+    width: 2px;
+    height: 15px;
+    background: #f9f9f9;
+}
+
+#mainMovie .link>li.on::after {
+    height: 25px;
+    background: var(--sc);
+}
+
+#mainMovie .link strong {
+    color: var(--sc);
+    font-size: 24px;
+    margin: 0 0 10px 0;
+}
+
+#mainMovie .link span {
+    font-size: 15px;
+    color: #f9f9f9;
+}
+
+#mainNews ul {
+    gap: 30px;
+}
+
+#mainNews ul>li {
+    flex: 1;
+}
+
+#mainNews ul>li>a * {
+    display: block;
+}
+
+#mainNews ul>li figure {
+    height: 238px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+#mainNews ul>li:not(#mainNews ul>li:nth-child(2)) figure img {
+    object-position: 0 -45px;
+}
+
+#mainNews ul>li span {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--mc);
+    margin-bottom: 15px;
+}
+
+#mainNews ul>li a strong {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 15px 0;
+    line-height: 28px;
+    word-break: keep-all;
+}
+
+#mainNews ul>li:hover strong {
+    text-decoration: underline;
+}
+
+#mainNews ul>li em {
+    font-size: 14px;
+    font-weight: 300;
 }

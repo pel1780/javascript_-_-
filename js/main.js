@@ -202,3 +202,65 @@ const V_SWITCH = e => {
 // V_SWITCH
 
 V_BTN.addEventListener('click', V_SWITCH)
+
+
+const MOVIE_UL = document.querySelector('#mainMovie .link');
+const UL_CSS = `
+display : flex; 
+gap: 50px;
+width : 600px; 
+margin : 60px auto 0 auto;
+text-align : center;
+`;
+MOVIE_UL.style.cssText = UL_CSS;
+
+// [...MOVIE_UL.children][0].classList.add('on');
+
+
+const MOVIE_LINK = [
+    { title: "IT Technology", desc: "IT 기술이 창조하는 승강기 스마트 시스템" },
+    { title: "Green Technology", desc: "지구환경을 생각하는 녹색기술" }
+];
+
+
+// for (let i = 0; i < MOVIE_LINK.length; i++) {
+//     MOVIE_UL.innerHTML +=
+//         `<li>
+//         <strong>${MOVIE_LINK[i].title}</strong>
+//         <span>${MOVIE_LINK[i].desc}</span>
+//         </li>`;
+// }
+for (it of MOVIE_LINK) {
+    MOVIE_UL.innerHTML +=
+        `<li>
+        <strong>${it.title}</strong>
+        <span>${it.desc}</span>
+        </li>`;
+}
+
+const STRONG = document.querySelectorAll('#mainMovie .link strong');
+STRONG[0].style.display = 'block';
+
+// console.log([...MOVIE_UL.children][0]);
+[...MOVIE_UL.children][0].classList.add('on');
+
+const MOVIE_UL_TOGGLE = e => {
+    //전체 li에서 class를 떼고 클릭한 li에 class를 붙인다
+    // click한 것의 번호 가져오기
+    // const tg = e.target.parentElement;
+    let idx = [...MOVIE_UL.children].indexOf(e.target.parentElement);
+    // console.log(idx);
+    // console.log(tg);
+
+    for (it of [...MOVIE_UL.children]) {
+        it.classList.remove('on');
+    };
+    // tg.classList.add('on');
+    [...MOVIE_UL.children][idx].classList.add('on');
+}
+MOVIE_UL.addEventListener('click', MOVIE_UL_TOGGLE);
+
+
+for (it of STRONG) {
+    it.style.display = 'block';
+}
