@@ -16,7 +16,8 @@ a {
     text-decoration: none;
 }
 
-em {
+em,
+address {
     font-style: normal;
 }
 

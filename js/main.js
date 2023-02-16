@@ -264,3 +264,29 @@ MOVIE_UL.addEventListener('click', MOVIE_UL_TOGGLE);
 for (it of STRONG) {
     it.style.display = 'block';
 }
+
+// #footer .f_top .t_right>li a click했을때 전체 li에서는 on을 떼고 내 위의 부모에다가 class on을 붙인다.
+
+const T_RIGHT = document.querySelectorAll(' #footer .f_top .t_right>li>a');
+const T_RIGHT_BTN = document.querySelectorAll('#footer .f_top .t_right>li button');
+console.log(T_RIGHT_BTN);
+
+T_RIGHT_BTN.forEach(it => {
+    it.addEventListener('click', () => {
+        it.closest('li').classList.remove('on');
+    })
+});
+const R_TAB = (it, idx) => {
+    console.log(it, idx);
+    for (itm of T_RIGHT) itm.parentElement.classList.remove('on');
+    it.parentElement.classList.add('on');
+}
+
+T_RIGHT.forEach((it, idx) => {
+    it.addEventListener('click', e => {
+        e.preventDefault();
+        R_TAB(it, idx)
+    });
+
+
+})

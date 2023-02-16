@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con li {
+            display: none;
+        }
+
+        .con li.on {
+            display: block;
+        }
+
+        .menu li.on {
+            color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="menu">
+        <li class="on">menu01</li>
+        <li>menu02</li>
+        <li>menu03</li>
+    </ul>
+    <ul class="con">
+        <li class="on">con01</li>
+        <li>con02</li>
+        <li>con03</li>
+    </ul>
+
+    <script>
+        //강사가 번호마 나오면 뭐든지 만들수 있다고 했다 한번 보자
+        //$(this).index() 제이쿼리에 있는 인덱스를 가져오는 방법
+        // nodeList, htmlCollection 유사배열... .children
+
+        const UL = document.querySelector('.menu');
+        const MENU = document.querySelectorAll('.menu>li');
+        const CON = document.querySelectorAll('.con>li');
+        console.log(
+            MENU, //nodeList
+            UL.children, //htmlCollection : nodeList보다 더욱 제한적
+            ...UL.children, //ul의 자식들을 주루룩 늘여놓음
+            [...UL.children], //배열을 도와주는 함수를 많이 사용가능함
+        );
+
+        //MENU의 li를 클릭했을때 그 번호를 가져오기 + 번호가 같은것에 on을붙여 보이게 하기
+
+        // const 번호가져오기 = (e) => {
+        //     const 번호 = [...MENU].indexOf(e.target);
+
+        //     for (let i = 0; i < CON.length; i++) {
+        //         CON[i].classList.remove('on');
+        //     }
+        //     CON[번호].classList.add('on');
+        // }
+
+        // for (let i = 0; MENU.length; i++) {
+        //     MENU[i].addEventListener('click', 번호가져오기);
+        // } for문을 사용한 탭메뉴
+
+        // forEach 라는 메소드는 번호를 아주 쉽게 반환한다 함수덩어리
+        MENU.forEach((it, idx) => {
+            it.addEventListener('click', () => {
+                for (itm of MENU) itm.classList.remove('on');
+                it.classList.add('on');
+                for (itm of CON) itm.classList.remove('on');
+                CON[idx].classList.add('on');
+            });
+        })
+
+    </script>
+</body>
+
+</html>
