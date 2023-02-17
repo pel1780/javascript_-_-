@@ -278,8 +278,15 @@ T_RIGHT_BTN.forEach(it => {
 });
 const R_TAB = (it, idx) => {
     console.log(it, idx);
-    for (itm of T_RIGHT) itm.parentElement.classList.remove('on');
-    it.parentElement.classList.add('on');
+
+    // for (el of T_RIGHT) {
+    //     if (el !== it) {
+    //         el.parentElement.classList.remove('on');
+    //     }
+    // }
+    for (itm of T_RIGHT) if (itm !== it) { itm.parentElement.classList.remove('on'); }
+    it.parentElement.classList.toggle('on');
+
 }
 
 T_RIGHT.forEach((it, idx) => {
@@ -287,6 +294,21 @@ T_RIGHT.forEach((it, idx) => {
         e.preventDefault();
         R_TAB(it, idx)
     });
-
-
 })
+
+const TO_TOP = document.querySelector('#toTop');
+const BODY = document.querySelector('html, body');
+
+const TOGGLE_TOP_BTN = () => {
+    console.log(window.scrollY)
+    window.scrollY > 600 ? TO_TOP.classList.add('on') : TO_TOP.classList.remove('on');
+
+}
+window.addEventListener('scroll', TOGGLE_TOP_BTN);
+const WINDOW_TOP = () => {
+    console.log('wlrdjTsp~~');
+    // 윈도우를 설정 하면 이벤트가 일어나지만 설정이 안되있는 모니터에서는 이벤트가 일어나지 않음
+    // BODY.scrollTo({ top: 0, behavior: "smooth" });
+    gsap.to(BODY, { duration: 1, scrollTo: 0 });
+}
+TO_TOP.addEventListener('click', WINDOW_TOP)

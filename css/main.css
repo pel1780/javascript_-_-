@@ -806,3 +806,28 @@ p {
     padding: 10px;
     border-radius: 50%;
 }
+
+#toTop {
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    z-index: 999;
+    cursor: auto;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+#toTop.on {
+    visibility: visible;
+    opacity: 1;
+    cursor: pointer;
+}
+
+#toTop i {
+    padding: 15px;
+    background: var(--mc);
+    color: #fff;
+    font-size: 31px;
+}
